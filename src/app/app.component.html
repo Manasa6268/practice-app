@@ -1,17 +1,20 @@
-<!-- string interpolation -->
+<!-- Data binding a) string interpolation -->
 <h1>{{title}}</h1>
 <!-- <div>
-     event binding 
+    Data binding c)  event binding 
     <input type="text" class="form-control" (input)="onUpdate($event)">
 </div> -->
 <div>
-    <!--two way binding -->
+    <!--Data binding d) two way binding -->
     <input type="text" class="form-control" [(ngModel)]="text">
 </div>
-<div> {{text}} </div>
-<!--Property binding -->
-<!--Directives -- Structural Directives -- ngStyle-->
-<button [disabled]="!allow" [ngStyle]="{backgroundColor:color,color:textcolor}" (click)="onBtnClick()">Add</button>
+<!--Directives -- Structural Directives -- ngFor -->
+<div *ngFor="let text of texts"> {{text}} </div>
+<!-- Data binding b) Property binding -->
+<!--Directives -- Property/attribute Directives -- ngStyle-->
+<!--Directives -- Property/attribute Directives -- ngClass-->
+<button [disabled]="!allow" [ngClass]="{enable: allow == true}" [ngStyle]="{backgroundColor:color}"
+    (click)="onBtnClick()">Add</button>
 <!--Directives -- Structural Directives -- ngIf -->
 <p *ngIf="ontextchange;">Added</p>
 <!--Directives -- Structural Directives -- ngIf-else -->

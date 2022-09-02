@@ -12,6 +12,7 @@ export class AppComponent {
   status = 'no event happened'
   text = ''
   textcolor = 'white'
+  texts: string[] = []
   allow: boolean = false
   ontextchange: boolean = false
   constructor() {
@@ -29,6 +30,7 @@ export class AppComponent {
   onBtnClick() {
     window.alert('Button was clicked and text  ' + this.text + ' was entered');
     this.ontextchange = true
+    this.texts.push(this.text);
   }
   onUpdate(event: any) {
     this.text = event.target.value;
